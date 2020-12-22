@@ -10,6 +10,8 @@ TagManager:
   - Score
   - ResetBall
   - ResetButton
+  - Ball3
+  - Ball2
   layers:
   - Default
   - TransparentFX
