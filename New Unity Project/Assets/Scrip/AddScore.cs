@@ -8,22 +8,36 @@ public class AddScore : MonoBehaviour
     private int ScoreVal=0;
     public Text RScoreBoard;
     public Text LScoreBoard;
+    public AudioSource AudioScore2;
+    public AudioSource AudioScore3;
+
+    private void Start()
+    {
+        Scoredisplay();
+    }
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag=="Ball3")
         {
-            ScoreVal =ScoreVal+3;
+            Debug.Log("ScoreAdd3");
+            ScoreVal +=3;
+            AudioScore3.Play();
+            Scoredisplay();
         }
         if (col.tag == "Ball2")
         {
-            ScoreVal = ScoreVal + 2;
+            Debug.Log("ScoreAdd2");
+            ScoreVal +=2;
+            AudioScore2.Play();
+            Scoredisplay();
         }
     }
 
-    void Start()
+    void Scoredisplay()
     {
-        RScoreBoard.text = "Your score:/n" + ScoreVal;
-        RScoreBoard.text = LScoreBoard.text;
+        Debug.Log("UpdateScore");
+        RScoreBoard.text = "Your score:\n" + ScoreVal;
+        LScoreBoard.text = "Your score:\n" + ScoreVal;
     }
 }
