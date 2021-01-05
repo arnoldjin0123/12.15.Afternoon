@@ -12,6 +12,7 @@ TagManager:
   - ResetButton
   - Ball3
   - Ball2
+  - ExitBall
   layers:
   - Default
   - TransparentFX
